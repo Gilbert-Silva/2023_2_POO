@@ -1,5 +1,5 @@
-run = "mcs './Aula08/ex01.cs' -out:Main.exe ; mono Main.exe"
-#run = "python './Aula08/ex01.py'"
+#run = "mcs './Aula09/ex01.cs' -out:Main.exe ; mono Main.exe"
+run = "python './Aula09/ex01.py'"
 #run = "java './Aula07/Ex01.java'"
 #run = "g++ -O2 -o main.exe 'Aula07/ex01.cpp' ; ./main.exe"
 entrypoint = "main.cs"
