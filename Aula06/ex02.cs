@@ -9,7 +9,8 @@ class Triangulo {
 
 class Program {
   public static void Main() {
-    Triangulo x = new Triangulo();
+    int i = 5;
+ex    x = new Triangulo(); // reserva
     Triangulo y = new Triangulo();
     x.b = 10;
     x.h = 20;
@@ -18,7 +19,8 @@ class Program {
     Console.WriteLine(x.b * x.h / 2);
     Console.WriteLine(y.b * y.h / 2);
     Console.WriteLine(x.CalcArea());
-    Console.WriteLine(y.CalcArea());        
+    Console.WriteLine(y.CalcArea());
+    x = null; // liberação
   }
 }
 
