@@ -7,9 +7,9 @@ class Program {
     //x.h = -20;
     x.SetBase(10);
     x.SetAltura(20);
-   // Console.WriteLine(x.b);
-    Console.WriteLine(x.GetBase());
+    // Console.WriteLine(x.b);
     // Console.WriteLine(x.h);
+    Console.WriteLine(x.GetBase());
     Console.WriteLine(x.GetAltura());
     Console.WriteLine(x.ToString());
     
