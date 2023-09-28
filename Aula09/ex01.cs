@@ -11,6 +11,7 @@ class Program {
     // Console.WriteLine(x.h);
     Console.WriteLine(x.GetBase());
     Console.WriteLine(x.GetAltura());
+    Console.WriteLine(x.CalcArea());
     Console.WriteLine(x.ToString());
     
     Triangulo y = new Triangulo(30, 40);
