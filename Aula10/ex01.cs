@@ -12,12 +12,15 @@ class Program {
 }
 
 class Ingresso {
+  private string dia;
+  private int hora;
   public Ingresso(string dia, int hora) {
     this.set_dia(dia);
     this.set_hora(hora);
   }
   public void set_dia(string dia) {
-    if (dia in ["dom", "seg", "ter", "qua", "qui", "sex", "sab"])
+    string[] dias = { "dom", "seg", "ter", "qua", "qui", "sex", "sab" }; 
+    if (Array.IndexOf(dias, dia) != -1)  
       this.dia = dia;
     else
       throw new ArgumentOutOfRangeException();
@@ -35,8 +38,10 @@ class Ingresso {
   public double inteira() {
     if (dia == "qua") return 8;
     double p = 16;
-    if (dia in ["sex", "sab", "dom"]) p = 20;
-    if (hora == 0 || self.hora >= 17) p = p * 1.5;
+    string[] dias = { "dom", "sex", "sab" }; 
+    if (Array.IndexOf(dias, dia) != -1) p = 20;
+    // if (dia in ["sex", "sab", "dom"]) p = 20;
+    if (hora == 0 || hora >= 17) p = p * 1.5;
     return p;
   }  
   public double meia() {
