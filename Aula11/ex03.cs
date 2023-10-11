@@ -6,12 +6,25 @@ class Program {
     x.Inserir("Programação");
     x.Inserir("Orientada");
     x.Inserir("a Objetos");
+    x.InserirNoInicio("Disciplina");
     Console.WriteLine(x.Listar());
   }
 }
 
 class Lista {
-  private No inicio, fim;
+  private No inicio = null, fim = null;
+  public void InserirNoInicio(string valor) {
+    No novo = new No();
+    novo.valor = valor;
+    if (inicio == null) {
+      inicio = novo;
+      fim = novo;
+    }
+    else {
+      novo.prox = inicio;
+      inicio = novo;
+    }
+  }
   public void Inserir(string valor) {
     No novo = new No();
     novo.valor = valor;
