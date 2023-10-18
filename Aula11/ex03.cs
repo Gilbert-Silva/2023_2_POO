@@ -2,6 +2,8 @@ using System;
 
 class Program {
   public static void Main() {
+    string s = new string("C#");
+    Console.WriteLine(s);
     Lista x = new Lista();
     x.Inserir("Programação");
     x.Inserir("Orientada");
