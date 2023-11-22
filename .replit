@@ -1,11 +1,11 @@
-run = "mcs './Aula19/ex01.cs' -out:Main.exe ; mono Main.exe"
+run = "mcs './Projeto/program.cs' './Projeto/view.cs' './Projeto/produto.cs' -out:Main.exe ; mono Main.exe"
 #run = "python './Aula14/ex04.py'"
 #run = "java './Aula12/temp.java'"
 #run = "g++ -O2 -o main.exe 'Aula15/ex01.cpp' ; ./main.exe"
 entrypoint = "main.cs"
 
 hidden = ["bin", "obj"]
-
+ 
 [env]
 DOTNET_NOLOGO = "1"
 DOTNET_CLI_TELEMETRY_OPTOUT = "1"

@@ -1,0 +1,17 @@
+using System;
+
+static class View {
+  public static void ProdutoInserir(string nome, double preco, int estoque) {
+    
+  }
+  public static List<Produto> ProdutoListar() {
+
+  }
+  public static void ProdutoAtualizar(int id, string nome, double preco, int estoque) {
+
+  }
+  public static void ProdutoExcluir(int id) {
+
+  }
+
+}
