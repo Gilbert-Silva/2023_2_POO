@@ -12,6 +12,8 @@ class Program {
         case 2: ProdutoListar(); break;
         case 3: ProdutoAtualizar(); break;
         case 4: ProdutoExcluir(); break;
+        case 5: ProdutoSalvarCSV(); break; 
+        case 6: ProdutoAbrirCSV(); break; 
       }
     }
     Console.WriteLine("Bye");
@@ -22,6 +24,8 @@ class Program {
     Console.WriteLine("02 - Listar");
     Console.WriteLine("03 - Atualizar");
     Console.WriteLine("04 - Excluir");
+    //Console.WriteLine("05 - Salvar");
+    //Console.WriteLine("06 - Abrir");
     Console.WriteLine();
     Console.WriteLine("99 - Sair");
     Console.Write("\nOpção: ");
@@ -47,5 +51,11 @@ class Program {
   }
   public static void ProdutoExcluir() {
 
+  }
+  public static void ProdutoSalvarCSV() {
+    View.ProdutoSalvarCSV();
+  }
+  public static void ProdutoAbrirCSV() {
+    View.ProdutoAbrirCSV();
   }
 }

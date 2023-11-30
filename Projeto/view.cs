@@ -17,4 +17,10 @@ static class View {
     Produto p = new Produto{ Id = id };
     NProduto.Excluir(p);
   }
+  public static void ProdutoSalvarCSV() {
+    NProduto.ToXML();
+  }
+  public static void ProdutoAbrirCSV() {
+    NProduto.FromXML();
+  }
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfProduto xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Produto>
+    <Id>1</Id>
+    <Nome>Mouse</Nome>
+    <Preco>100</Preco>
+    <Estoque>10</Estoque>
+  </Produto>
+  <Produto>
+    <Id>2</Id>
+    <Nome>Teclado</Nome>
+    <Preco>50</Preco>
+    <Estoque>25</Estoque>
+  </Produto>
+  <Produto>
+    <Id>3</Id>
+    <Nome>Notebook</Nome>
+    <Preco>2000</Preco>
+    <Estoque>10</Estoque>
+  </Produto>
+</ArrayOfProduto>
