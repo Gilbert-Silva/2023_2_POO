@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfFilme xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Filme>
+    <Id>1</Id>
+    <Nome>Filme</Nome>
+    <Estudio>Estudio</Estudio>
+  </Filme>
+  <Filme>
+    <Id>2</Id>
+    <Nome>Filme</Nome>
+    <Estudio>Estudio</Estudio>
+  </Filme>
+  <Filme>
+    <Id>3</Id>
+    <Nome>Filme</Nome>
+    <Estudio>Estudio</Estudio>
+  </Filme>
+</ArrayOfFilme>

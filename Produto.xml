@@ -5,17 +5,34 @@
     <Nome>Mouse</Nome>
     <Preco>100</Preco>
     <Estoque>10</Estoque>
+    <IdCategoria>0</IdCategoria>
   </Produto>
   <Produto>
     <Id>2</Id>
     <Nome>Teclado</Nome>
     <Preco>50</Preco>
     <Estoque>25</Estoque>
+    <IdCategoria>0</IdCategoria>
   </Produto>
   <Produto>
     <Id>3</Id>
     <Nome>Notebook</Nome>
     <Preco>2000</Preco>
     <Estoque>10</Estoque>
+    <IdCategoria>0</IdCategoria>
+  </Produto>
+  <Produto>
+    <Id>4</Id>
+    <Nome>Monitor</Nome>
+    <Preco>1000</Preco>
+    <Estoque>20</Estoque>
+    <IdCategoria>0</IdCategoria>
+  </Produto>
+  <Produto>
+    <Id>5</Id>
+    <Nome>Mouse Dell</Nome>
+    <Preco>80</Preco>
+    <Estoque>10</Estoque>
+    <IdCategoria>1</IdCategoria>
   </Produto>
 </ArrayOfProduto>
