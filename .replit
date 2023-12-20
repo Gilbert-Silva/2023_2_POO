@@ -1,4 +1,4 @@
-run = "mcs './Projeto/program.cs' './Projeto/view.cs' './Projeto/produto.cs' './Projeto/categoria.cs' -out:Main.exe ; mono Main.exe"
+run = "mcs './Projeto/program.cs' './Projeto/view.cs' './Projeto/modelo.cs' './Projeto/produto.cs' './Projeto/categoria.cs' -out:Main.exe ; mono Main.exe"
 #run = "mcs './Aula21/Ex01.cs' -out:Main.exe ; mono Main.exe"
 #run = "python './Aula14/ex04.py'"
 #run = "java './Aula20/Ex01.java'"

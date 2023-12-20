@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 
-public class Produto {
+public class Produto : IModelo {
   public int Id { get; set; }
   public string Nome { get; set; }
   public double Preco { get; set; }
@@ -14,7 +14,17 @@ public class Produto {
   }
 }
 
-class NProduto {
+class NProduto : NModelo<Produto> {
+  public NProduto() : base("Produto.xml") { }
+  public List<Produto> Listar(Categoria c) {
+    List<Produto> produtos = new List<Produto>();
+    foreach(Produto obj in Listar())
+      if (obj.IdCategoria == c.Id) produtos.Add(obj);
+    return produtos;
+  }
+}
+
+class NProduto2 {
   private List<Produto> produtos = new List<Produto>();
   public void ToXML() {
     XmlSerializer xml = new XmlSerializer(typeof(List<Produto>));

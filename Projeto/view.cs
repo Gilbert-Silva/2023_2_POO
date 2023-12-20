@@ -13,6 +13,10 @@ static class View {
     NProduto np = new NProduto();
     return np.Listar();
   }
+  public static List<Produto> ProdutoListar(int idCategoria) {
+    NProduto np = new NProduto();
+    return np.Listar(new Categoria { Id = idCategoria });
+  }
   public static void ProdutoAtualizar(int id, string nome, double preco, int estoque, int idCategoria) {
     if (preco < 0) throw new ArgumentOutOfRangeException("Preço inválido");
     if (estoque < 0) throw new ArgumentOutOfRangeException("Estoque inválido");

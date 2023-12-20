@@ -4,41 +4,89 @@ using System.Collections.Generic;
 class Program {
   public static void Main() {
     Console.WriteLine("IF Shop");
-    int op = 0;
-    while (op != 99) {
-      try
-      {
-        op = Menu();
-        switch (op) {
+    if (Login() == "admin") {
+      int op = 0;
+      while (op != 99) {
+        try
+        {
+          op = MenuAdmin();
+          switch (op) {
           case 1: ProdutoInserir(); break;
           case 2: ProdutoListar(); break;
-          case 3: ProdutoAtualizar(); break;
-          case 4: ProdutoExcluir(); break;
-          case 5: CategoriaInserir(); break; 
-          case 6: CategoriaListar(); break; 
-          case 7: CategoriaAtualizar(); break; 
-          case 8: CategoriaExcluir(); break; 
+          case 3: ProdutoListarCategoria(); break;
+          case 4: ProdutoAtualizar(); break;
+          case 5: ProdutoExcluir(); break;
+          case 6: CategoriaInserir(); break; 
+          case 7: CategoriaListar(); break; 
+          case 8: CategoriaAtualizar(); break; 
+          case 9: CategoriaExcluir(); break; 
+          }
         }
-      }
-      catch (Exception obj) {
-        Console.WriteLine("Deu erro: " + obj.Message);
-      }
-    }  
-    Console.WriteLine("Bye");
+        catch (Exception obj) {
+          Console.WriteLine("Deu erro: " + obj.Message);
+        }
+      }  
+      Console.WriteLine("Bye");
+    }
+    else {
+      int op = 0;
+      while (op != 99) {
+        try
+        {
+          op = MenuUsuario();
+          switch (op) {
+          case 1: ProdutoListar(); break;
+          case 2: ProdutoListarCategoria(); break;
+          case 3: CategoriaListar(); break; 
+          }
+        }
+        catch (Exception obj) {
+          Console.WriteLine("Deu erro: " + obj.Message);
+        }
+      }  
+      Console.WriteLine("Bye");
+    }
   }
-  public static int Menu() {
+  public static string Login() {
+    Console.WriteLine();
+    Console.Write("E-mail: ");
+    string email = Console.ReadLine();
+    Console.Write("Senha: ");
+    string senha = Console.ReadLine();
+    if (email == "admin" && senha == "123456") {
+      return "admin";
+    }
+    return "usuario";
+  }
+  
+  public static int MenuUsuario() {
+    Console.WriteLine();
+    Console.WriteLine("Menu Produtos");
+    Console.WriteLine("01 - Listar");
+    Console.WriteLine("02 - Listar por Categoria");
+    Console.WriteLine();
+    Console.WriteLine("Menu Categoria");
+    Console.WriteLine("03 - Listar");
+    Console.WriteLine();
+    Console.WriteLine("99 - Sair");
+    Console.Write("\nOpção: ");
+    return int.Parse(Console.ReadLine());
+  }
+  
+  public static int MenuAdmin() {
     Console.WriteLine();
     Console.WriteLine("Menu Produtos");
     Console.WriteLine("01 - Inserir");
     Console.WriteLine("02 - Listar");
-    Console.WriteLine("03 - Atualizar");
-    Console.WriteLine("04 - Excluir");
+    Console.WriteLine("03 - Listar por Categoria");
+    Console.WriteLine("04 - Atualizar");
+    Console.WriteLine("05 - Excluir");
     Console.WriteLine();
     Console.WriteLine("Menu Categoria");
-    Console.WriteLine("05 - Inserir");
-    Console.WriteLine("06 - Listar");
-    Console.WriteLine("07 - Atualizar");
-    Console.WriteLine("08 - Excluir");
+    Console.WriteLine("06 - Inserir");
+    Console.WriteLine("07 - Listar");
+    Console.WriteLine("08 - Atualizar");
+    Console.WriteLine("09 - Excluir");
     Console.WriteLine();
     Console.WriteLine("99 - Sair");
     Console.Write("\nOpção: ");
@@ -63,6 +111,18 @@ class Program {
   public static void ProdutoListar() {
     Console.WriteLine("Cadastro de Produtos");
     foreach (Produto p in View.ProdutoListar())
+    {
+      Categoria c = View.CategoriaListar(p.IdCategoria);
+      Console.WriteLine(p + " - " + c.Nome);
+    }
+  }
+  public static void ProdutoListarCategoria() {
+    Console.WriteLine("Cadastro de Produtos por Categoria");
+    foreach (Categoria c in View.CategoriaListar())
+      Console.WriteLine(c);
+    Console.Write("\nInforme o id da categoria: ");
+    int idCategoria = int.Parse(Console.ReadLine());
+    foreach (Produto p in View.ProdutoListar(idCategoria))
     {
       Categoria c = View.CategoriaListar(p.IdCategoria);
       Console.WriteLine(p + " - " + c.Nome);

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 
-public class Categoria {
+public class Categoria : IModelo {
   public int Id { get; set; }
   public string Nome { get; set; }
   public override string ToString() {
@@ -11,7 +11,11 @@ public class Categoria {
   }
 }
 
-class NCategoria {
+class NCategoria : NModelo<Categoria> {
+  public NCategoria() : base("Categoria.xml") { }
+}
+
+class NCategoria2 {
   private List<Categoria> objetos = new List<Categoria>();
   public void ToXML() {
     XmlSerializer xml = new XmlSerializer(typeof(List<Categoria>));
